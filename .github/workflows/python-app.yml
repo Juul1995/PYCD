@@ -2,29 +2,25 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
 #https://ayeshalshukri.co.uk/category/guides/automated-deployment/
 
-name: Python application
+name: Run tests
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-permissions:
-  contents: read
-
+# Run this workflow whenever something new is pushed.
+on: push
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  run-tests:
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install Dependencies
-    run: pip install -r requirements.txt
-    - name: Run tests
-    run: pytest
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        # Specify some input for this particular action
+        with:
+          python-version: '3.8.6'
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Run tests
+        run: pytest
+        
 #https://ayeshalshukri.co.uk/category/guides/automated-deployment-using-github-actions-ssh-and-shell-script/
 
