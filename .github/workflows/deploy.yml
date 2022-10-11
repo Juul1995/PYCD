@@ -1,0 +1,18 @@
+#https://stackoverflow.com/questions/68435485/is-it-possible-to-use-github-secrets-inside-my-shell-file
+#https://docs.cloudbees.com/docs/cloudbees-codeship/latest/basic-continuous-deployment/deployment-with-ftp-sftp-scp
+
+name: CI
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to server 
+      uses: appleboy/ssh-action@master
+      env:
+        USERNAME: ${{ secrets.USER }}
+        HOST: ${{ secrets.HOST }}
+        SCRIPT: ~/deployment.sh
+        KEY: ${{ secrets.SSHKEY }}
+

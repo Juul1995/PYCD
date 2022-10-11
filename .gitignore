@@ -1,0 +1,7 @@
+# How to ignore the venv 
+.venv 
+pipeline
+
+# Other solution. 
+#git rm .env --cached
+#git commit -m "Stopped tracking .env File"
