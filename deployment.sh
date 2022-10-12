@@ -13,6 +13,8 @@
 
 sudo service ssh restart
 
+zsh % print "hello world"
+
 # # install nginx 
 # sudo apt install nginx
 # sudo systemctl enable nginx
