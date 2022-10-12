@@ -2,6 +2,12 @@
 
 #https://board.wincacademy.nl/unit/view/id:5738
 
+git add .
+
+git commit -m "deploy"
+
+git push origin master
+
 # scp -r pycd root@178.62.229.117:/home/
 
 # apt install python3-pip
