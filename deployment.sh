@@ -11,6 +11,8 @@
 # gunicorn main:app
 # sudo systemctl restart gunicorn
 
+sudo service ssh restart
+
 # # install nginx 
 # sudo apt install nginx
 # sudo systemctl enable nginx
