@@ -31,4 +31,4 @@ jobs:
         script: ls
     
     - name: Run deployment.sh 
-        run: deployment.sh
+        run: bash deployment.sh
