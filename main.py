@@ -8,10 +8,11 @@ app = Flask(__name__)
 def number():
     return str(random.randint(0, 10))
 
-print("Dit is een nummer")
 
 if __name__ == "__main__":
     app.run()
 
 # virtual environment : $ source pipeline/Scripts/activate, $ deactivate 
 #FLASK_APP=application:app flask run
+
+#gunicorn is niet compatible met Windows! Inloggen op Linux eerst. 
