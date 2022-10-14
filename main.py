@@ -8,6 +8,8 @@ app = Flask(__name__)
 def number():
     return str(random.randint(0, 10))
 
+print("And now you see this random number")
+
 
 if __name__ == "__main__":
     app.run()
