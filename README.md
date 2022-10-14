@@ -1,16 +1,17 @@
 CD notes 
 
-GitHub Actions or Bash to Digital Ocean and SSH.
-Components 
-
 Digital ocean -- handshake SSH : I actually had to choose with Public Key instead of password. 
 I didn't realize immediately that you need both keys, one that deciphers the other. The should form a pair. 
+
+In github you can store the private key ( and host, username, port) as a secret. The Github actions can make use of those secrets in the login steps. 
 
 You can use "pip install" on linux, but then you also need to install first pip (the Package manager from Python). 
 Otherwise you can't use pip. 
 https://linuxconfig.org/install-pip-on-linux
 
-In github you can store the private key ( and host, username, port) as a secret. The Github actions can make use of those secrets in the login steps. 
+How to make sure the actions are executed in what order: https://resources.github.com/whitepapers/github-actions-cheat/
+
+
 
 Problems & solutions 
 

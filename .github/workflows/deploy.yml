@@ -1,34 +1,34 @@
-name: Deploy
+# name: Deploy
 
-on: [push]
+# on: [push]
 
-jobs:
-  build:
+# jobs:
+#   build:
 
-    runs-on: ubuntu-latest
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v1
+#     steps:
+#     - uses: actions/checkout@v2
 
-    - name: Copy repository contents via scp
-      uses: appleboy/scp-action@master
-      env:
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-      with:
-        source: "main.py"
-        target: "/var/www/html/"
+#     - name: Copy repository contents via scp
+#       uses: appleboy/scp-action@master
+#       env:
+#         HOST: ${{ secrets.HOST }}
+#         USERNAME: ${{ secrets.USERNAME }}
+#         PORT: ${{ secrets.PORT }}
+#         KEY: ${{ secrets.SSHKEY }}
+#       with:
+#         source: "main.py"
+#         target: "/var/www/html/"
 
-    - name: Executing remote command
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-        PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
-        script: ls
+#     - name: Executing remote command
+#       uses: appleboy/ssh-action@master
+#       with:
+#         host: ${{ secrets.HOST }}
+#         USERNAME: ${{ secrets.USERNAME }}
+#         PORT: ${{ secrets.PORT }}
+#         KEY: ${{ secrets.SSHKEY }}
+#         script: ls
     
-    - name: Run deployment.sh 
-      run: bash deployment.sh
+#     - name: Run deployment.sh 
+#       run: bash deployment.sh
