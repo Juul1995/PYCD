@@ -9,9 +9,9 @@ You can use "pip install" on linux, but then you also need to install first pip 
 Otherwise you can't use pip. 
 https://linuxconfig.org/install-pip-on-linux
 
-How to make sure the actions are executed in what order: https://resources.github.com/whitepapers/github-actions-cheat/
-
-
+How to make sure the actions are executed in the correct order. The steps are executed in sequence. So if pytest fails, then the action stops and sends a failed report. 
+I built in a visual check, which is in step Run bash deployment.sh, it says; 
+It should have worked
 
 Problems & solutions 
 
